@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-ru\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: cs-cart-ru\n"
+"X-Crowdin-Project-ID: 54044\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: /release-4.15.2/addons/commerceml.po\n"
+"X-Crowdin-File-ID: 7012\n"
+"PO-Revision-Date: 2022-10-06 05:43\n"
+
+msgctxt "Addons::name::under_age"
+msgid "Under age"
+msgstr "Несовершеннолетний"
+
+msgctxt "Addons::description::under_age"
+msgid "Allows you to control minimal age of your visitors"
+msgstr "Позволяет ограничить минимальный возраст посетителей"
+
+
+msgctxt "SettingsSections::under_age::general"
+msgid "General"
+msgstr "Общие"
+
+msgctxt "SettingsOptions::under_age::minimal_age"
+msgid "Minimal age"
+msgstr "Минимальный возраст"
+
+msgctxt "SettingsOptions::under_age::age_restriction_text"
+msgid "Restriction Text"
+msgstr "Текст при ограничении доступа"
+
+msgctxt "Languages::popup_title_check"
+msgid "Information"
+msgstr "Информация"
+
+msgctxt "Languages::popup_title_forbidden"
+msgid "Warning"
+msgstr "Предупреждение"
+
+msgctxt "Languages::popup_text_pre"
+msgid "Your age is below "
+msgstr "Ваш возраст ниже "
+
+msgctxt "Languages::birthday_date"
+msgid "Enter your date of Birthday"
+msgstr "Введите дату вашего рождения  "

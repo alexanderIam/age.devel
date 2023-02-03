@@ -1,0 +1,42 @@
+msgid ""
+msgstr "Project-Id-Version: tygh\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::under_age"
+msgid "Under age"
+msgstr "Under age"
+
+msgctxt "Addons::description::under_age"
+msgid "Allows you to control minimal age of your visitors"
+msgstr "Allows you to control minimal age of your visitors"
+
+
+msgctxt "SettingsSections::under_age::general"
+msgid "General"
+msgstr "General"
+
+msgctxt "SettingsOptions::under_age::minimal_age"
+msgid "Minimal age"
+msgstr "Minimal age"
+
+msgctxt "SettingsOptions::under_age::age_restriction_text"
+msgid "Restriction Text"
+msgstr "Restriction Text"
+
+msgctxt "Languages::popup_title_check"
+msgid "Information"
+msgstr "Information"
+
+msgctxt "Languages::popup_title_forbidden"
+msgid "Warning"
+msgstr "Warning"
+
+msgctxt "Languages::popup_text_pre"
+msgid "Your age is below "
+msgstr "Your age is below "
+
+msgctxt "Languages::birthday_date"
+msgid "Enter your date of Birthday"
+msgstr "Enter your date of Birthday  "
