@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>under_age</id>
+    <version>4.15.2.0</version>
+    <priority>200</priority>
+    <position>100</position>
+    <status>active</status>
+	<has_icon>Y</has_icon>
+    <settings layout="separate" edition_type="ROOT,ULT:VENDOR">
+        <sections>
+            <section id="general">
+                <items>
+                    <item id="minimal_age">
+                        <type>input</type>
+                        <default_value>18</default_value>
+                    </item>
+                     <item id="age_restriction_text">
+                        <type>textarea</type>
+                        <default_value>Access forbidden.
+                            You cannot view the content of this site
+                        </default_value>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+</addon>
