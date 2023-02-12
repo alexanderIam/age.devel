@@ -12,40 +12,37 @@
  * "copyright.txt" FILE PROVIDED WITH THIS DISTRIBUTION PACKAGE.            *
  ****************************************************************************/
 
-if (!defined('BOOTSTRAP')) { die('Access denied'); }
+use Tygh\Enum\UserTypes;
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+defined('BOOTSTRAP') or die('Access denied');
 
-    if ($mode == 'verify' && defined('AJAX_REQUEST')) {
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-		$birthday = fn_parse_date($_REQUEST['birthday']);
-		$user_age = fn_calculate_user_age($birthday);
+    if($mode == 'verify' && defined('AJAX_REQUEST')){
+
+        $birthday = !empty($_REQUEST['birthday']) ? fn_parse_date($_REQUEST['birthday']) : 0;
+        $user_age = fn_calculate_user_age($birthday);
         $is_legal_age = fn_check_age($user_age);
-		fn_set_user_age_type($is_legal_age);
-        $under_age_type = fn_get_cookie('under_age_type');
-        
+        fn_set_user_age_type($is_legal_age);
+
         Tygh::$app['ajax']->assign('force_redirection', fn_url());
-
-    }elseif($mode === 'check' && defined('AJAX_REQUEST')){
-        
-        $user_type = Tygh::$app['session']['auth']['user_type'];
-        $under_age_type = fn_get_cookie('under_age_type');
-        
-        if($user_type === 'A' || !empty($under_age_type)){
-            exit;
-            
-        }else{
-
-            if(Tygh::$app['session']['auth']['user_id'] === 0){
-				fn_set_cookie('under_age_type', 'verify');
-               
-			}else{
-				$user_age = Tygh::$app['session']['auth']['user_age'];		
-				$is_legal_age = fn_check_age($user_age);
-				fn_set_user_age_type($is_legal_age);
-                $under_age_type = fn_get_cookie('under_age_type');
-			}
-            Tygh::$app['ajax']->assign('force_redirection', fn_url());      
-        }
+        return [CONTROLLER_STATUS_OK];
     }
 }
+
+$user_type = Tygh::$app['session']['auth']['user_type'];
+$under_age_type = fn_get_cookie('under_age_type');
+if($user_type !== UserTypes::ADMIN && empty($under_age_type)){
+
+    if(Tygh::$app['session']['auth']['user_id'] === 0){
+        fn_set_cookie('under_age_type', 'verify');
+
+    }else{
+        $user_age = Tygh::$app['session']['auth']['user_age'];
+        $is_legal_age = fn_check_age($user_age);
+        fn_set_user_age_type($is_legal_age);
+    }
+    Tygh::$app['view']->assign('under_age_type', fn_get_cookie('under_age_type'));
+    header('Location: ../index.php');
+}
+Tygh::$app['view']->assign('under_age_type', fn_get_cookie('under_age_type'));
