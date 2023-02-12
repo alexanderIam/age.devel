@@ -15,5 +15,6 @@
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
 fn_register_hooks(
-    'user_init'
+    'user_init',
+    'dispatch_assign_template'
 );

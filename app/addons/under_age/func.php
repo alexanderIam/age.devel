@@ -15,6 +15,21 @@
  use Tygh\Registry;
 
 /**
+ * Hook handler for "dispatch_assign_template"
+ *
+ * Actions performed:
+ *     - Adds on every page under_age.php to controllers_cascade.
+ *
+ * @param array    $_controllers_cascade Array of controllers
+ *
+ * @return void
+ */
+function fn_under_age_dispatch_assign_template(&$controller, &$mode, $area, &$controllers_cascade)
+{
+    array_push($controllers_cascade, dirname(__FILE__) . '/controllers/frontend/under_age.php');  
+}
+
+/**
  * Hook handler for "user_init"
  *
  * Actions performed:
